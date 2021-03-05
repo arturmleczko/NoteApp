@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteApp</title><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Mulish:wght@500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="note-app">
+        <h1>NoteApp</h1>
+        <div class="note-editor">
+            <input type="text" placeholder="Tytuł" id="title">
+            <textarea placeholder="Treść notatki" name="content" id="content" rows="6"></textarea>
+            <div class="color-picker">
+                <input type="radio" name="color-pick" id="color-one">
+                <label for="color-one"></label>
+                <input type="radio" name="color-pick" id="color-two">
+                <label for="color-two"></label>
+                <input type="radio" name="color-pick" id="color-three">
+                <label for="color-three"></label>
+                <input type="radio" name="color-pick" id="color-four">
+                <label for="color-four"></label>
+                <input type="radio" name="color-pick" id="color-five">
+                <label for="color-five"></label>
+            </div>
+            <button>Dodaj</button>
+        </div>
+        <div class="importantNotes"></div>
+        <div class="readyNotes"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

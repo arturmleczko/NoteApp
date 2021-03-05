@@ -1,0 +1,295 @@
+:root {
+    --bg-color: #f8f9fa;
+    --heading-color: #7f7f7f;
+    --forms-color: #525252;
+    --color-one: #ff595e;
+    --color-two: #ffca3a;
+    --color-three: #8ac926;
+    --color-four: #1982c4;
+    --color-five: #6a4c93;
+    --button-color: #55a630;
+    --button-color--hover: #80b918;
+}
+
+/* RESET */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* NOTE APP */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+.note-app {
+    max-width: 1280px;
+    width: 100%;
+}
+
+h1 {
+    margin: 40px 0 50px 0;
+    color: var(--heading-color);
+    font-family: 'Mulish', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.note-editor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 300px;
+    height: 30vh;
+    padding: 16px 16px 7px 16px;
+    margin: 16px auto 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#title,
+#content {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    color: var(--forms-color);
+    font-family: 'Lato', sans-serif;
+    outline: none;
+    opacity: 0.95;
+    resize: none;
+}
+
+#title {
+    font-size: 31px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+#content {
+    font-size: 29px;
+    font-weight: 300;
+}
+
+.color-picker {
+    width: 50%;
+    margin: 15px 0 15px 0;
+}
+
+.color-picker input {
+    visibility: hidden;
+    width: 0;
+    margin: 0;
+}
+
+.color-picker label {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: .1s;
+}
+
+.color-picker label:hover {
+    opacity: 1;
+}
+
+.color-picker input[type="radio"]:checked+label {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+label[for="color-one"] {
+    background-color: var(--color-one);
+}
+
+label[for="color-two"] {
+    background-color: var(--color-two);
+}
+
+label[for="color-three"] {
+    background-color: var(--color-three);
+}
+
+label[for="color-four"] {
+    background-color: var(--color-four);
+}
+
+label[for="color-five"] {
+    background-color: var(--color-five);
+}
+
+button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 18px 38px;
+    border: 1px solid var(--button-color);
+    background-color: var(--button-color);
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    outline: none;
+    transition: background-color .2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--button-color--hover);
+}
+
+.readyNotes {
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+}
+
+.importantNotes {
+    position: relative;
+    width: 0;
+    margin: 0 auto;
+    height: auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.note {
+    position: relative;
+    display: block;
+    width: 300px;
+    min-height: 200px;
+    height: auto;
+    float: left;
+    margin: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: .3s;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note:hover {
+    transform: scale(1.01);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.24);
+}
+
+.note>* {
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.note>p {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.note>h3 {
+    width: 80%;
+    font-size: 22px;
+}
+
+.note>h4 {
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 60px;
+}
+
+.thumbtack {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    font-size: 23px;
+    line-height: 43px;
+    text-align: center;
+    transition: .3s linear;
+    cursor: pointer;
+}
+
+.note>.thumbtack i {
+    opacity: 0;
+    transition: .3s linear;
+}
+
+.note:hover>.thumbtack i {
+    opacity: 0.8;
+}
+
+.thumbtack:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #fff;
+    opacity: 1;
+}
+
+.thumbtackImp {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    font-size: 30px;
+    line-height: 43px;
+    text-align: center;
+    transition: .3s linear;
+    cursor: pointer;
+}
+
+.remove {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    font-size: 23px;
+    line-height: 35px;
+    text-align: center;
+    transition: .3s linear;
+    cursor: pointer;
+    color: white;
+}
+
+.note:hover>.remove {
+    background-color: black;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.note>.remove i {
+    opacity: 0;
+    transition: .3s linear;
+}
+
+.note:hover>.remove i {
+    opacity: 1
+}
